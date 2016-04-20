@@ -18,13 +18,13 @@ int main()
    while(1)
    {
      system("cls");
-	 cout<<"1.添加学生成绩"<<endl;
-	 cout<<"2.显示学生成绩"<<endl;
-	 cout<<"3.根据学号查询学生信息"<<endl;
-	 cout<<"4.根据学号删除学生信息"<<endl;
-	 cout<<"5.根据学号修改学生成绩"<<endl;
-	 cout<<"0.退出系统"<<endl;
-	 cout<<"请输入："<<endl;
+	 cout<<"1.Add student grade"<<endl;
+	 cout<<"2.Display student grade"<<endl;
+	 cout<<"3.Find student information according to student number"<<endl;
+	 cout<<"4.Delete student information according to student number"<<endl;
+	 cout<<"5.Change student information according to student number"<<endl;
+	 cout<<"0.Exit system"<<endl;
+	 cout<<"Please input:"<<endl;
      cin>>way;
 	  switch(way)
 	  {
