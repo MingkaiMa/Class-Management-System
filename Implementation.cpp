@@ -8,22 +8,22 @@
 using namespace std;
 void Manage::Add(Student&s)
 {
-	cout<<"ÇëÊäÈëĞèÒªÌí¼ÓµÄÑ§ÉúÑ§ºÅ£º";
+	cout<<"Please input the student number that you want to add";
 		cin>>s.number;
 for(int i=0;i<stu.size();i++)
 {
 	if(stu[i].search(s.number))
-	{	cout<<"¸ÃÑ§ºÅÑ§ÉúĞÅÏ¢ÒÑ´æÔÚ";
+	{	cout<<"The student is already exist";
 	return;
 	}
 }
-	cout<<"ĞÕÃû:";
+	cout<<"Name:";
 	cin>>s.name;
-	cout<<"ÊıÑ§³É¼¨£º";
+	cout<<"Math gradesï¼š";
 	cin>>s.math;
-	cout<<"Ó¢Óï³É¼¨:";
+	cout<<"English grades:";
 	cin>>s.english;
-	cout<<"¼ÆËã»ú³É¼¨£º";
+	cout<<"Computer gradesï¼š";
 	cin>>s.computer;
 	stu.push_back(s);
 	s.display();
@@ -32,46 +32,46 @@ for(int i=0;i<stu.size();i++)
 void Manage::Delete()
 {
 	string num;
-	cout<<"ÊäÈëÄúĞèÒªÉ¾³ıµÄÑ§ÉúÑ§ºÅ£º";
+	cout<<"Please input the student number that you want to delete";
 	cin>>num;
 	for(int j=0;j<stu.size();j++)
 	{
 		if(stu[j].search(num))
 			stu.erase(stu.begin()+j);
 	}
-	cout<<num<<"Ñ§ÉúĞÅÏ¢ÒÑÉ¾³ı"<<endl;
+	cout<<num<<"The student is deleted"<<endl;
 	Store();
 
 }
 void Manage::Seek()
 {string nu;
-cout<<"ÇëÊäÈëÄúĞèÒª²éÑ¯µÄÑ§ÉúÑ§ºÅ£º";
+cout<<"Please input the student number that you want to find";
 cin>>nu;
 for(int j=0;j<stu.size();j++)
 {
 	if(stu[j].search(nu)){
-		cout<<"ÕÒµ½Ñ§ºÅÎª"<<nu<<"µÄÑ§Éú£¬ÄÚÈİÊÇ£º"<<endl;
+		cout<<"student number"<<nu<<"name"<<endl;
 		stu[j].display();
 		break;
 	}
 }
-cout<<"Ã»ÓĞÄúÒªÕÒµÄÑ§ÉúĞÅÏ¢£¡"<<endl;
+cout<<"No student exist"<<endl;
 }
 void Manage::Alter(string ma,string en,string co)
 {
 	string nu;
-	cout<<"ÇëÊäÈëÄúĞèÒªĞŞ¸ÄĞÅÏ¢µÄÑ§ÉúÑ§ºÅ£º";
+	cout<<"Please input the student number that you want to change";
 	cin>>nu;
 	for(int j=0;j<stu.size();j++)
 	{
 		if(stu[j].search(nu))
 		{
-			cout<<"ÇëÒÀ´ÎÊäÈëĞèÒªĞŞ¸ÄµÄÊıÑ§¡¢Ó¢Óï¡¢¼ÆËã»ú³É¼¨£º"<<endl;
+			cout<<"Please input the changed Math gardes,English grades and Computer grades"<<endl;
 			cin>>ma>>en>>co;
 			stu[j].math=ma;
 			stu[j].english=en;
 			stu[j].computer=co;
-			cout<<"ĞŞ¸ÄºóµÄÑ§ÉúĞÅÏ¢Îª£º"<<endl;
+			cout<<"After change,the student's information is:"<<endl;
 			stu[j].display();
 		}
 	}
@@ -81,7 +81,7 @@ void Manage::Store()
    ofstream outfile("student.txt");
    if(!outfile)
    {
-      cout<<"Êı¾İÎÄ¼ş²»´æÔÚ"<<endl;
+      cout<<"Data file is not exist"<<endl;
 	  return;
    }
 for(int i=0;i<stu.size();i++)
@@ -93,7 +93,7 @@ for(int i=0;i<stu.size();i++)
 }
 void Manage::Play()
 {
-	cout<<"Ñ§ºÅ"<<setw(6)<<"ĞÕÃû"<<setw(6)<<"ÊıÑ§"<<setw(6)<<"Ó¢Óï"<<setw(6)<<"¼ÆËã»ú"<<setw(6)<<endl;
+	cout<<"Student Number"<<setw(6)<<"Name"<<setw(6)<<"Math"<<setw(6)<<"English"<<setw(6)<<"Computer"<<setw(6)<<endl;
      for(int i=0;i<stu.size();i++)
      {
          cout<<stu[i].number<<" "<<stu[i].name<<" "<<stu[i].math<<" "<<stu[i].english<<" "<<stu[i].computer<<endl;
